@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<title>¿Bajar videos de campus hosteados en vimeo? &#9642; Librenauta</title>
+<!--
+<meta name="description" content="Tuto para descargar videos de campus/cursos pagos a los cuales, al terminar el ciclo revocan claves de acceso.
+">
+-->
+   <base href="../../" />
+<meta name="description" content="Tuto para descargar videos de campus/cursos pagos a los cuales, al terminar el ciclo revocan claves de acceso.">
+<meta name="keywords" content="cultura libre, videos libres, descargar video">
+<link rel="canonical" href="http://localhost:4000/posts/video-descarga">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="¿Bajar videos de campus hosteados en vimeo?" />
+<meta name="twitter:description" content="Tuto para descargar videos de campus/cursos pagos a los cuales, al terminar el ciclo revocan claves de acceso.
+" />
+<meta name="twitter:image" content="http://localhost:4000" />
+<meta name="author" content="">
+<link rel="author" href="">
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="¿Bajar videos de campus hosteados en vimeo?">
+<meta property="og:description" content="Tuto para descargar videos de campus/cursos pagos a los cuales, al terminar el ciclo revocan claves de acceso.
+">
+<meta property="og:url" content="http://localhost:4000/posts/video-descarga">
+<meta property="og:site_name" content="Librenauta">
+<link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:400,400italic,700,700italic">
+<style>
+    html {
+      font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    }
+</style>
+<link rel="stylesheet" href="/assets/css/bf.css">
+   <body>
+       <div class="wrapper" id="blep">
+          <header>
+   <div class="menu">
+     <div class="logo">
+        <a href="/">Librenauta</a>
+        <object type="image/svg+xml" data="/assets/img/dactl.svg" class="logosvg">Your browser does not support svg images</object>
+     </div>
+       <ul>
+           <li><a href="/about">about</a>
+           <li><a href="/archive">archive</a>
+       </ul>
+   </div>
+   <div class="social">
+     <ul>
+       <li>
+            <a href="https://twitter.com/librenauta" target="_blank" class="smaller">
+              <span class="icon-twitter"></span>
+            </a>
+       <li>
+            <a href="https://github.com/librenauta" target="_blank" class="smaller">
+              <span class="icon-github"></span>
+            </a>
+       <li>
+            <a href="mailto:librenauta@riseup.net" target="_blank">
+              <span class="icon-mail_outline"></span>
+            </a>
+       <li>
+            <a href="/feed.xml" target="_blank">
+                <span class="icon-rss_feed"></span>
+            </a>
+       <li>
+            <a href="#" onclick="switchTheme()" title="Switch theme?">
+              <span class="icon-invert_colors" id="theme-switcher"></span>
+            </a>
+     </ul>
+   </div>
+</header>
+<article class="post">
+<style>
+  .video-descarga {
+    margin-bottom: 2em;
+  }
+  .video-descarga::before {
+    background-image: url('/assets/img/descargar-video.png');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .video-descarga::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,100,255,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .video-descarga-container,
+  .video-descarga-container::before,
+  .video-descarga-container::after {
+    height: 25rem;
+  }
+  .video-descarga-bleed-container,
+  .video-descarga-bleed-container::before,
+  .video-descarga-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .video-descarga-container,
+        .video-descarga-container::before,
+        .video-descarga-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div class="post-title-container
+  video-descarga video-descarga-bleed-container bleed-hero-container
+    ">
+    <!--Post hero image source-->
+   <div class="heading-container hero-heading hero-heading-post">
+     <h1>
+          ¿Bajar videos de campus hosteados en vimeo?
+     </h1>
+     <div class="post-meta">
+        <span>14/11/2018</span>
+        <span>
+              <a href="/tag/cultura libre">#cultura libre</a>
+              <a href="/tag/videos libres">#videos libres</a>
+              <a href="/tag/descargar video">#descargar video</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <h1 id="bajandole">Bajandole</h1>
+<p>Si ya pagaste un curso y te dan acceso a un campus para verlos, ¿Por qué luego no podrías ver ese contenido?, para poder repasar esos videos cuando quieras vamos a descargarlos. porque si tu navegador puede reproducirlos de alguna manera:
+<ol>
+ <li>Se estan bajando a tu pc.
+ <li>Podemos conseguir el link directo donde está hosteado el video.
+*Para esto necesitamos navegar los siguientes pasos y llegar a la: [URL video]+[TOKEN VALIDACIÓN]
+</ol>
+<p>[1] Dentro del campus, hacemos Click-derecho [<em>Inspeccionar elementos</em>]
+<img src="https://box.copiona.com/assets/img/vid/01.png" alt="683x741" title="Large example image" />
+<p>[2] Vamos a la pestaña [<em>Depurador</em>]
+<img src="https://box.copiona.com/assets/img/vid/02.png" alt="683x741" title="Large example image" />
+<p>[3] Vamos a la pestaña [<em>player.vimeo.com</em>]
+<img src="https://box.copiona.com/assets/img/vid/03.png" alt="683x741" title="Large example image" />
+<p>[4] Buscamos la carpeta [<em>video</em>] index
+<img src="https://box.copiona.com/assets/img/vid/04.png" alt="683x741" title="Large example image" />
+<p>[5] Seleccionamos el contenido de index
+<img src="https://box.copiona.com/assets/img/vid/05.png" alt="683x741" title="Large example image" />
+<p>[6] Lo pegamos en un editor de texto donde podamos buscar con ctrl+f “.mp4” y copiamos una url que contenga el link directo + token de validación
+<img src="https://box.copiona.com/assets/img/vid/06.png" alt="683x741" title="Large example image" />
+<p>[6] y con esta url completa podemos llegar al video completo y su descarga.  *Ej:<code class="highlighter-rouge">https://gcs-vimeo.akamaized.net/exp=15++++++~acl=%2A%2F1047741295.mp4%2A~hmac=2abc71f0c50b40f5d47f722d79de74f7649508e2988934723e0568a86b4780e9/vimeo-prod-skyfire-std-us/01/4477/++++++/1047741295.mp4</code>
+ dónde: <code class="highlighter-rouge">https://gcs-vimeo.akamaized.net/exp=15++++++~acl=%2A%2F1047741295.mp4</code> es la url y si la ingresamos nos dice “acceso denegado” pero si agregamos:<code class="highlighter-rouge">%2A~hmac=2abc71f0c50b40f5d47f722d79de74f7649508e2988934723e0568a86b4780e9/vimeo-prod-skyfire-std-us/01/4477/10/++++++/1047741295.mp4</code> podemos descargarlo.
+<img src="https://box.copiona.com/assets/img/vid/07.png" alt="683x741" title="Large example image" />
+<p>*Luego en una terminal ponemos <code class="highlighter-rouge">$ wget [link]</code> y descargamos!
+@Piratacland armó este tutorial para poder descargar los subtitulos de vimeo y me pareció super interesante
+(https://blognooficial.wordpress.com/2017/10/17/descargar-los-subtitulos-de-vimeo-actualizacion/)
+<p>*Lo expuesto aquí tiene fines educativos, encuanto al proceso de validación de acceso a videos Vimeo.
+<p>*~librenauta
+</article>
+<aside class="related">
+<h2>Related posts</h2>
+<ul class="related-posts">
+</aside>
+           <footer>
+    <span>Sitio estático lleno de craneadas dinámicas</span>
+    <span>written by librenauta</span>
+</footer>
+       </div>
+<script type="text/javascript" src="/assets/js/theme.js"></script>
+<script type="text/javascript" src="/assets/js/barefoot.js"></script>
+    

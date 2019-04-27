@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<title>Usar TL-WN722N sobre un Linux Guest VM desde un Linux Host &#9642; Librenauta</title>
+<!--
+<meta name="description" content="TL-WN722N sobre un Linux Guest VM desde un Linux Host.
+">
+-->
+   <base href="../../" />
+<meta name="description" content="TL-WN722N sobre un Linux Guest VM desde un Linux Host.">
+<meta name="keywords" content="tp-link, vm desde linux, linux host">
+<link rel="canonical" href="http://localhost:4000/posts/adaptador-wn722n-1-8">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Usar TL-WN722N sobre un Linux Guest VM desde un Linux Host" />
+<meta name="twitter:description" content="TL-WN722N sobre un Linux Guest VM desde un Linux Host.
+" />
+<meta name="twitter:image" content="http://localhost:4000" />
+<meta name="author" content="">
+<link rel="author" href="">
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Usar TL-WN722N sobre un Linux Guest VM desde un Linux Host">
+<meta property="og:description" content="TL-WN722N sobre un Linux Guest VM desde un Linux Host.
+">
+<meta property="og:url" content="http://localhost:4000/posts/adaptador-wn722n-1-8">
+<meta property="og:site_name" content="Librenauta">
+<link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:400,400italic,700,700italic">
+<style>
+    html {
+      font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    }
+</style>
+<link rel="stylesheet" href="/assets/css/bf.css">
+   <body>
+       <div class="wrapper" id="blep">
+          <header>
+   <div class="menu">
+     <div class="logo">
+        <a href="/">Librenauta</a>
+        <object type="image/svg+xml" data="/assets/img/dactl.svg" class="logosvg">Your browser does not support svg images</object>
+     </div>
+       <ul>
+           <li><a href="/about">about</a>
+           <li><a href="/archive">archive</a>
+       </ul>
+   </div>
+   <div class="social">
+     <ul>
+       <li>
+            <a href="https://twitter.com/librenauta" target="_blank" class="smaller">
+              <span class="icon-twitter"></span>
+            </a>
+       <li>
+            <a href="https://github.com/librenauta" target="_blank" class="smaller">
+              <span class="icon-github"></span>
+            </a>
+       <li>
+            <a href="mailto:librenauta@riseup.net" target="_blank">
+              <span class="icon-mail_outline"></span>
+            </a>
+       <li>
+            <a href="/feed.xml" target="_blank">
+                <span class="icon-rss_feed"></span>
+            </a>
+       <li>
+            <a href="#" onclick="switchTheme()" title="Switch theme?">
+              <span class="icon-invert_colors" id="theme-switcher"></span>
+            </a>
+     </ul>
+   </div>
+</header>
+<article class="post">
+<style>
+  .adaptador-wn722n-1-8 {
+    margin-bottom: 2em;
+  }
+  .adaptador-wn722n-1-8::before {
+    background-image: url('/assets/img/tplink.jpg');
+    background-size: cover;
+    -webkit-filter: grayscale(1) brightness(0.5) contrast(0.5);
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+  .adaptador-wn722n-1-8::after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(255,0,100,0.8);
+    /*mix-blend-mode: darken;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: hard-light;*/
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  .adaptador-wn722n-1-8-container,
+  .adaptador-wn722n-1-8-container::before,
+  .adaptador-wn722n-1-8-container::after {
+    height: 25rem;
+  }
+  .adaptador-wn722n-1-8-bleed-container,
+  .adaptador-wn722n-1-8-bleed-container::before,
+  .adaptador-wn722n-1-8-bleed-container::after {
+    height: 35rem;
+  }
+    @media (max-width: 48rem) {
+        .adaptador-wn722n-1-8-container,
+        .adaptador-wn722n-1-8-container::before,
+        .adaptador-wn722n-1-8-container::after{
+            height: 20rem;
+            margin-bottom: 3rem;
+        }
+    }
+</style>
+ <div class="post-title-container
+  adaptador-wn722n-1-8 adaptador-wn722n-1-8-bleed-container bleed-hero-container
+    ">
+    <!--Post hero image source-->
+   <div class="heading-container hero-heading hero-heading-post">
+     <h1>
+          Usar TL-WN722N sobre un Linux Guest VM desde un Linux Host
+     </h1>
+     <div class="post-meta">
+        <span>01/12/2018</span>
+        <span>
+              <a href="/tag/tp-link">#tp-link</a>
+              <a href="/tag/vm desde linux">#vm desde linux</a>
+              <a href="/tag/linux host">#linux host</a>
+        </span>
+     </div>
+   </div>
+ </div>
+   <h1 id="tp-link-wn722n-by-vegetalex">TP-LINK-WN722N by @vegetalex</h1>
+<p>Especificaciones:
+Linux Host: manjaro-xfce-17.1.12-stable-x86_64
+<p>Linux Guest: kali-linux-2018.2-vbox-amd64 y wifislax64-1.1-final
+<p>VM: VirtualBox Versión 5.2.22 r126257
+<p>Extension pack: Oracle VM Virtual Box Extension Pack Versión 5.22 r126460
+<p>TP-Link: TL-WN722N Versión 1.8
+<p>Notebook: Lenovo Thinkpad T420
+<p><img src="https://box.copiona.com/assets/img/tp-link/1.jpg" alt="683x741" title="Large example image" />
+<p>La plaquita usb TP-LINK TL-WN722N sólo en su versión 1.x permite usar el modo monitor para hacer auditorías de seguridad sobre redes wireless.
+Para realizar estas auditorías, se utiliza software provisto en versiones modificadas de linux como es el caso de Kali o Wifislax.
+<p>Consideraciones: para este tutorial partimos de la base que se instaló Virtual Box en su última versión a la fecha (5.22) y se creó una maquina virtual a la que se le instaló Kali, Wifislax o cualquier linux en el que se quiera utilizar la TL-WN722N como wifi. En mi caso tengo configuradas la máquinas con una red NAT a las que le doy internet con el wifi de la Lenovo T420.
+<p>Este turorial se basó en https://blog.binarymist.net/2015/09/03/tl-wn722n-on-kali-vm-on-linux-host/
+<p>Adaptador wifi
+<p>TL-WN722N Versión 1.8
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre><td class="code"><pre>chip-set: Atheros ar9271
+
+Vendor ID: 0cf3
+
+Product ID: 9271
+
+Modulo (driver): ath9k_htc
+</pre></table>
+</div>
+</div>
+<p><img src="https://box.copiona.com/assets/img/tp-link/2.jpg" alt="683x741" title="Large example image" />
+<img src="https://box.copiona.com/assets/img/tp-link/3.jpg" alt="683x741" title="Large example image" />
+<p>Entonces, tenemos por una lado la máquina con nuestro linux host (manjaro) conectada a internet con el wifi o la placa de red (ethernet) y por el otro lado, ejecutamos virtual box con nuestro linux guest (kali, wifislax o el que queramos) y le damos internet con la red NAT usando el wifi o ethernet de la máquina.
+<p>Necesitamos usar la TP-LINK USB en el linux guest para poder probar y usar las herramientas de auditoría wireless pero al conectarla, lo que pasa es que la toma el linux host.
+Tenemos en la maquina 2 wifis y no podemos usarlas en virtualbox.
+<p>1.Lo primero que hacemos es instalar el extension pack de virtual box para poder utilizar dispositivos usb conectados al linux host en el linux guest.
+<p>Esta instalación puede salir de una o traernos alguna complicación. En mi caso particular tuve que descargar el ext pack en una carpeta y ejecutar desde la consola
+<p><code class="highlighter-rouge">sudo VBoxManage extpack install --replace /carpeta/Oracle_VM_VirtualBox_Extension_Pack-522.vbox-extpack</code>
+<p>2.Como paso siguiente conectamos la plaquita TP-LINK y vemos que la reconoció el sistema usando el comando <code class="highlighter-rouge">lsusb</code>
+<p><img src="https://box.copiona.com/assets/img/tp-link/4.jpg" alt="683x741" title="Large example image" />
+<p>Procedemos a darle priviligios para usar los USB de la máquina física a los linux guest
+<p>Para esto lo que hacemos es agregar a nuestro usuario de linux host en el grupo vboxusers con el comando usermod
+<p><img src="https://box.copiona.com/assets/img/tp-link/5.jpg" alt="683x741" title="Large example image" />
+<p>Ahora tenemos que “desinstalar” el driver de la TL-WN722N del Linux Host (Manjaro), para eso quitamos el módulo del kernel con los siguientes comandos:
+<p><code class="highlighter-rouge">sudo lsmod | grep -e ath</code>  (Buscamos que el módulo ath9k_htc esté instalado en el kernel)
+<p><code class="highlighter-rouge">sudo modprobe -r ath9k_htc</code>  (Quitamos el módulo ath9k_htc del kernel)
+<p><code class="highlighter-rouge">sudo nano /etc/modprobe.d/blacklist-ath9k.conf</code> (Creamos el archivo blacklist-ath9k.conf para poner en una lista negra al módulo ath9k_htc)
+<p>Escribimos en el archivo blacklist-ath9k.conf la línea blacklist ath9k_htc y guardamos
+<p>De esta manera hemos desinstalado la tp-link desde el host. Cuando desconectemos y reconectemos la plaquita wifi vamos a ver que no prende el led verde (es como si no andara).
+<p>En este punto podríamos reiniciar la máquina para probar que ningún cambio se pierda cuando apaguemos.
+<p>Vamos a virtual box y en la configuración de la máquina en la opción USB elegimos la plaquita ATHEROS USB 2.0 WAN
+<p>//imagen de virtual box con la elección (atheros-vbox.png)
+<img src="https://box.copiona.com/assets/img/tp-link/8.jpg" alt="683x741" title="Large example image" />
+<p>Arrancamos la máquina virtual y vemos que toma la placa TP-Link.
+<p>Con esto estamos listos para utilizar la TL-WN722N en una VM Kali o Wifislax.
+<p>hack!
+<p><img src="https://box.copiona.com/assets/img/tp-link/7.jpg" alt="683x741" title="Large example image" />
+<p>*~@vegetalex
+</article>
+<aside class="related">
+<h2>Related posts</h2>
+<ul class="related-posts">
+</aside>
+           <footer>
+    <span>Sitio estático lleno de craneadas dinámicas</span>
+    <span>written by librenauta</span>
+</footer>
+       </div>
+<script type="text/javascript" src="/assets/js/theme.js"></script>
+<script type="text/javascript" src="/assets/js/barefoot.js"></script>
+    
